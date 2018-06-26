@@ -1,0 +1,283 @@
+\begin{filecontents*}{inputs/refs.bib}
+@article {MR3239624,
+    AUTHOR = {Valeriote, M. and Willard, R.},
+     TITLE = {Idempotent {$n$}-permutable varieties},
+   JOURNAL = {Bull. Lond. Math. Soc.},
+  FJOURNAL = {Bulletin of the London Mathematical Society},
+    VOLUME = {46},
+      YEAR = {2014},
+    NUMBER = {4},
+     PAGES = {870--880},
+      ISSN = {0024-6093},
+   MRCLASS = {08A05 (06F99 68Q25)},
+  MRNUMBER = {3239624},
+       DOI = {10.1112/blms/bdu044},
+       URL = {http://dx.doi.org/10.1112/blms/bdu044},
+}
+\end{filecontents*}
+\documentclass[11pt]{amsart}
+% The following \documentclass options may be useful:
+% preprint      Remove this option only once the paper is in final form.
+% 10pt          To set in 10-point type instead of 9-point.
+% 11pt          To set in 11-point type instead of 9-point.
+% numbers       To obtain numeric citation style instead of author/year.
+
+%% \usepackage{setspace} %\onehalfspacing
+
+\usepackage{amsmath}
+\usepackage{amscd,amssymb,amsthm} %, amsmath are included by default
+\usepackage{latexsym,stmaryrd,mathrsfs,enumerate,scalefnt,ifthen}
+\usepackage{mathtools}
+\usepackage[mathcal]{euscript}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+\usepackage{url}
+\usepackage{scalefnt}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage[margin=1in]{geometry}
+\usepackage{scrextend}
+\usepackage{multirow}
+
+%%////////////////////////////////////////////////////////////////////////////////
+%% Theorem styles
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{Fact}[theorem]{Fact}
+\newtheorem*{fact}{Fact}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+\newtheorem*{obs}{Observation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acronyms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \usepackage[acronym, shortcuts]{glossaries}
+%\usepackage[smaller]{acro}
+\usepackage[smaller]{acronym}
+\usepackage{xspace}
+
+%% \acs{CSP} -- short version of the acronym\\
+%% \acl{CSP} -- expanded acronym without mentioning the acronym.\\
+%% \acp{CSP} -- plurals.\\
+%% \acfp{CSP} -- long forms into plurals.\\
+%% \acsp{CSP} -- short form into a plural.\\
+%% \aclp{CSP} -- long form into a plural.\\
+%% \acfi{CSP} -- Full Name acronym in italics and abbreviated form in upshape.\\
+%% \acsu{CSP} -- short form of the acronym and marks it as used.\\
+%% \aclu{CSP} -- Prints the long form of the acronym and marks it as used.\\
+
+\acrodef{lics}[LICS]{Logic in Computer Science}
+\acrodef{sat}[SAT]{satisfiability}
+\acrodef{nae}[NAE]{not-all-equal}
+\acrodef{ctb}[CTB]{cube term blocker}
+\acrodef{tct}[TCT]{tame congruence theory}
+\acrodef{wnu}[WNU]{weak near-unanimity}
+\acrodef{CSP}[CSP]{constraint satisfaction problem}
+\acrodef{MAS}[MAS]{minimal absorbing subuniverse}
+\acrodef{MA}[MA]{minimal absorbing}
+\acrodef{cib}[CIB]{commutative idempotent binar}
+\acrodef{sd}[SD]{semidistributive}
+\acrodef{NP}[NP]{nondeterministic polynomial time}
+\acrodef{P}[P]{polynomial time}
+\acrodef{PeqNP}[P $ = $ NP]{P is NP}
+\acrodef{PneqNP}[P $ \neq $ NP]{P is not NP}
+
+%%% This enables markdown style bold and italic. %%%
+\makeatletter
+\def\starparse{\@ifnextchar*{\bfstarx}{\itstar}}
+\def\bfstarx#1{\@ifnextchar*{\bfitstar\@gobble}{\bfstar}}
+\makeatother
+\def\itstar#1*{\textit{#1}\starON}
+\def\bfstar#1**{\textbf{#1}\starON}
+\def\bfitstar#1***{\textbf{\textit{#1}}\starON}
+\def\starON{\catcode`\*=\active}
+\def\starOFF{\catcode`\*=12}
+\starON
+\def*{\starOFF \starparse}
+\starOFF
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{inputs/proof-dashed}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Put new macros in the macros.sty file
+\usepackage{inputs/macros}
+
+% \usepackage[backend=bibtex]{biblatex}
+% \bibliography{inputs/refs.bib}
+
+\begin{document}
+\starON
+\title[Notes on n-permutability]{Notes on n-permutability}
+\date{\today}
+\author[W.~DeMeo and P.~Mayr]{William DeMeo and Peter Mayr}
+\address{University of Colorado}
+\email{williamdemeo@gmail.com}
+
+\section{Introduction}
+\begin{example}
+  \label{four-elt-grpd}
+Let $\bA_4 = \<\{0,1,2,3\}, \circ\>$ be the idempotent semigroup with binary operation $\circ$ given by the table below.
+\vskip3mm
+ \begin{center}
+ \begin{tabular}{c|cccc}
+      $\circ$ & 0 & 1 & 2 & 3\\
+      \hline
+      0 & 0 & 2 & 1 & 1\\
+      1 & 0 & 1 & 3 & 2\\
+      2 & 0 & 3 &2 & 1\\
+      3 & 1 & 2 & 1 & 3
+    \end{tabular}
+ \end{center}
+\vskip3mm
+%% \thanks{The authors would li}
+
+The variety $\mathbb{V}(\mathbf A)$ generated by $\mathbf A$ is CM, not CD, and has no edge term ($(\{1,2,3\},  \{0,1,2,3\})$ is a cube term blocker).
+There are also six-element algebras with these properties. Take, for example, the algebra $\bA_6 = \<\{0,1,2,3,4,5\}, \circ\>$ with operation table shown below.
+\vskip3mm
+ \begin{center}
+ \begin{tabular}{c|cccccc}
+      $\circ$ & 0 & 1 & 2 & 3 & 4 & 5\\
+      \hline
+      0 & 0 & 2 & 1 & 1 & 1 & 1\\
+      1 & 0 & 1 & 3 & 5 & 2 & 4\\
+      2 & 0 & 3 & 2 & 4 & 5 & 1\\
+      3 & 0 & 5 & 4 & 3 & 1 & 2\\
+      4 & 0 & 2 & 5 & 1 & 4 & 3\\
+      5 & 1 & 4 & 1 & 2 & 3 & 5
+    \end{tabular}
+ \end{center}
+\vskip3mm
+
+More generally, the following table yields a $2n$-element algebra with the same properties:
+\vskip3mm
+ \begin{center}
+ \begin{tabular}{c|cccccc}
+      $\circ$ & 0 & 1 & 2 & 3 & $\cdots$ & $2n-1$\\
+      \hline
+            0 & 0      & 2 & 1 & 1 & $\cdots$ & 1\\
+            1 & 0      &   &   &   &        & \\
+            2 & 0      &   &   &   &        & \\
+       $\vdots$ & $\vdots$ &  && \multicolumn{3}{c}{$\mathrm{Squag}_{2n-1}$}          \\
+         $2n-2$ & 0      &   &   &   &        & \\
+         $2n-1$ & 1      &   &   &   &        & 
+    \end{tabular}
+ \end{center}
+
+
+\vskip3mm
+Specializing to $3$-permutability for now, a \emph{local Hagemann-Mitchke} sequence for the set 
+\[\{(a_0, b_0, 0), (a_1, b_1, 1) , (a_2, b_2, 2) \} \subseteq A \times A \times \{0,1,2\}\] is a triple, $\mathbf p = (p_0, p_1, p_2)$, of 3-place terms satisfying
+\begin{align}
+a_0 &= p_0(a_0, a_0, b_0) =p_1(a_0, b_0, b_0) \nonumber\\
+    &= p_1(a_1, a_1, b_1) =p_2(a_1, b_1, b_1) \nonumber\\
+    &= p_2(a_2, a_2, b_2) =p_3(a_2, b_2, b_2) = b_2 \nonumber
+\end{align}
+Where we take $p_0$ and $p_3$ to be the first and third projections, respectively.
+
+\end{example}
+
+More generally, for $0\leq i < m$ and
+$(a_i, b_i, i)\in A \times A \times \{0,1,\dots,m-1\}$,
+we call $p = (p_0, p_1, \dots, p_m)$ a \emph{local Hagemann-Mitchke} sequence for 
+$(a_i, b_i, i)$ if $p_i(a_i, a_i, b_i) = p_{i+1}(a_i, b_i, b_i)$, where $p_0, p_m$ are the first and third projections, respectively.
+
+Valeriote and Willard prove in~\cite{MR3239624} that an idempotent algebra $\mathbf{A}$ generates a congruence $(n+1)$-permutable variety if and only if every subset
+of $A \times A \times \{0, 1, \dots, n\}$ has a local Hagemann-Mitchke sequence.
+
+\newpage
+
+\noindent {\bf Question:} Can the pair of terms below be used as the (non-projection) terms in a local Hagemann-Mitchke sequence $\mathbf p = (p_0, p_1, p_2, p_3)$ for the examples above.
+\begin{align}
+p_1(x,y,z) &= (x (y z) )x\nonumber\\
+p_2(x,y,z) &= (x (x (y z)) )x\nonumber
+\end{align}
+
+\noindent {\bf Answer:} No, these don't work. (insert counterexample)
+
+Here are some other tables that also yield algebras generating a CM, non-distributive variety with no cube term:
+
+\begin{example}
+  \label{four-elt-grpd}
+Consider the idempotent semigroup 
+$\bA_i = \<\{0,1,2,3\}, \circ_i\>$ with binary operation $\circ_i$ given in the $i$-th table below.
+\vskip3mm
+ \begin{center}
+ \begin{tabular}{c|cccc}
+      $\circ_3$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 3 & 2 & 1\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 3 & 3 & 2 & 1\\
+           3    & 3 & 2 & 1 & 3
+    \end{tabular}\hskip1cm
+ \begin{tabular}{c|cccc}
+      $\circ_2$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 2 & 3 & 1\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 2 & 3 & 2 & 1\\
+           3    & 2 & 2 & 1 & 3
+    \end{tabular}\hskip1cm
+ \begin{tabular}{c|cccc}
+      $\circ_2$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 2 & 1 & 3\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 1 & 3 & 2 & 1\\
+           3    & 1 & 2 & 1 & 3
+    \end{tabular}
+ \end{center}
+ \vskip5mm
+ \begin{center}
+ \begin{tabular}{c|cccc}
+      $\circ_2$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 2 & 1 & 1\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 0 & 3 & 2 & 1\\
+           3    & 1 & 2 & 1 & 3
+    \end{tabular}\hskip1cm
+ \begin{tabular}{c|cccc}
+      $\circ_2$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 3 & 1 & 1\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 0 & 3 & 2 & 1\\
+           3    & 1 & 2 & 1 & 3
+    \end{tabular}\hskip1cm
+ \begin{tabular}{c|cccc}
+      $\circ_3$ & 0 & 1 & 2 & 3\\
+      \hline
+           0    & 0 & 2 & 1 & 1\\
+           1    & 0 & 1 & 3 & 2\\
+           2    & 0 & 3 & 2 & 1\\
+           3    & 1 & 2 & 1 & 3
+    \end{tabular}
+ \end{center}
+\end{example}
+
+
+
+\bibliographystyle{alphaurl}
+\bibliography{inputs/refs} 
+
+\end{document}
