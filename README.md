@@ -8,7 +8,7 @@ Research on finitely generated subvarieties of finitely generated varieties
 
 Characterize the finitely generated varieties that have (or don't have) finitely generated proper subvarieties.
 
-In [A-M], Aichinger and Mayr solve the problem in case $\mathbb{V}(\mathbf{A})$ is either congruence distributive or has an *edge term*. (TODO: fill in details about cases handed in [1]).
+In [A-M], Aichinger and Mayr solve the problem in case $\mathbb{V}(\mathbf{A})$ is either congruence distributive or has an *edge term*. (TODO: check this and say more about cases handed in [A-M])
 
 Here we consider case in which $\mathbf{A}$ is finite and idempotent, and $\mathbb{V}(\mathbf{A})$ is congruence modular, *not* congruence distributive, and does not have an edge term.  (The latter is equivalent to having a so called cube term blocker.)
 
@@ -63,7 +63,7 @@ Now, $\mathbf A$ is nonabelian. If we can show that $\mathbf A$ is also absorpti
 
 #### Is $\mathbf A$ absorption-free?
 
-**To do:** check this!
+**TODO:** check!
 
 ---
 
