@@ -89,33 +89,33 @@ Since we are interested in finding SI's other than the trivial ones (in case 2),
 
 Here are the operation tables of a few other examples of idempotent groupoids with the properties mentioned (i.e., $\mathbb{V}(\mathbf A)$ is CM, not CD, CTB).
 
-$\circ_1$ | 0   | 1   | 2   | 3
---- | --- | --- | --- | ---
-0   | 0   |  2  | 1   | 3
-1   | 0   |  1  | 3   | 2
-2   | 1   |  3  | 2   | 1
-3   | 1   |  2  | 1   | 3
+| $\circ_1$ | 0   | 1   | 2   | 3 |
+| --- | --- | --- | --- | --- |
+| 0   | 0   |  2  | 1   | 3 |
+| 1   | 0   |  1  | 3   | 2 |
+| 2   | 1   |  3  | 2   | 1 |
+| 3   | 1   |  2  | 1   | 3 |
 
-$\circ_2$ | 0   | 1   | 2   | 3
---- | --- | --- | --- | ---
-0   | 0   |  2  | 3   | 1
-1   | 0   |  1  | 3   | 2
-2   | 2   |  3  | 2   | 1
-3   | 2   |  2  | 1   | 3
+| $\circ_2$ | 0   | 1   | 2   | 3 |
+| --- | --- | --- | --- | --- |
+| 0   | 0   |  2  | 3   | 1 |
+| 1   | 0   |  1  | 3   | 2 |
+| 2   | 2   |  3  | 2   | 1 |
+| 3   | 2   |  2  | 1   | 3 |
 
-$\circ_3$ | 0   | 1   | 2   | 3
---- | --- | --- | --- | ---
-0   | 0   |  3  | 2   | 1
-1   | 0   |  1  | 3   | 2
-2   | 3   |  3  | 2   | 1
-3   | 3   |  2  | 1   | 3
+| $\circ_3$ | 0   | 1   | 2   | 3 |
+| --- | --- | --- | --- | --- |
+| 0   | 0   |  3  | 2   | 1 |
+| 1   | 0   |  1  | 3   | 2 |
+| 2   | 3   |  3  | 2   | 1 |
+| 3   | 3   |  2  | 1   | 3 |
 
-$\circ_4$ | 0   | 1   | 2   | 3
---- | --- | --- | --- | ---
-0   | 0   |  3  | 1   | 1
-1   | 0   |  1  | 3   | 2
-2   | 0   |  3  | 2   | 1
-3   | 1   |  2  | 1   | 3
+| $\circ_4$ | 0   | 1   | 2   | 3 |
+| --- | --- | --- | --- | --- |
+| 0   | 0   |  3  | 1   | 1 |
+| 1   | 0   |  1  | 3   | 2 |
+| 2   | 0   |  3  | 2   | 1 |
+| 3   | 1   |  2  | 1   | 3 |
 
 
 ----------
@@ -125,25 +125,25 @@ $\circ_4$ | 0   | 1   | 2   | 3
 There are also 6-element algebras with these properties. Take, for example, the algebra
 $\mathbf{A}_6 = \langle \{0,1,2,3,4,5\}, \circ\rangle$ with operation table shown below.
 
-  * | 0   | 1   | 2   | 3   | 4   | 5
---- | --- | --- | --- | --- | --- | ---
-0   | 0   |  2  | 1   | 1   |  1  | 1
-1   | 0   |  1  | 3   | 5   |  2  | 4
-2   | 0   |  3  | 2   | 4   |  5  | 1
-3   | 0   |  5  | 4   | 3   |  1  | 2
-4   | 0   |  2  | 5   | 1   |  4  | 3
-5   | 1   |  4  | 1   | 2   |  3  | 5
+|  * | 0   | 1   | 2   | 3   | 4   | 5 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0   | 0   |  2  | 1   | 1   |  1  | 1 |
+| 1   | 0   |  1  | 3   | 5   |  2  | 4 |
+| 2   | 0   |  3  | 2   | 4   |  5  | 1 |
+| 3   | 0   |  5  | 4   | 3   |  1  | 2 |
+| 4   | 0   |  2  | 5   | 1   |  4  | 3 |
+| 5   | 1   |  4  | 1   | 2   |  3  | 5 |
 
 More generally, the following table yields a $2n$-element algebra with the same properties (i.e., $\mathbb{V}(\mathbf A)$ is CM, not CD, CTB):
 
-  * | 0   | 1   | 2   | 3   | ... | $2n-1$
---- | --- | --- | --- | --- | --- | ---
- 0  | 0      | 2 | 1 | 1 | $\cdots$ | 1
- 1 | 0      |   |   |   |        |
- 2 | 0      |   |   |   |        |
-$\vdots$ | $\vdots$ | |  | | $\mathrm{Squag}_{2n-1}$
-$2n-2$ | 0      |   |   |   |        |
-         $2n-1$ | 1      |   |   |   |
+|   * | 0   | 1   | 2   | 3   | ... | $2n-1$ |
+| --- | --- | --- | --- | --- | --- | --- |
+|  0  | 0      | 2 | 1 | 1 | $\cdots$ | 1 |
+|  1 | 0      |   |   |   |        | |
+|  2 | 0      |   |   |   |        | |
+| $\vdots$ | $\vdots$ | |  | | $\mathrm{Squag}_{2n-1}$ |
+| $2n-2$ | 0      |   |   |   |        | |
+|          $2n-1$ | 1      |   |   |   | |
 
 Specializing to $3$-permutability for now, a **local Hagemann-Mitchke sequence** for the set
 
