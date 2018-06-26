@@ -35,27 +35,27 @@ Every algebra is a subdirect product of subdirectly irreducible (SI) algebras, s
 
 To begin we will try to identify the SI's of $\mathbb V(\mathbf A)$.
 
-First, recall the general form of an algebra in $\mathbb{V} (\mathbf A)$.  If $\mathbf{B} \in \mathbb{V}(\mathbf{A}) = \mathbf H \mathbf S \mathbf P (\mathbf A)$, then there exists $n< \omega$, $\mathbf{C}$, and $\theta \in \operatorname{Con}(\mathbf{C})$ such that $\mathbf{C} \leqslant \mathbf{A}^n$ and $\mathbf{B} \cong \mathbf C/\theta$.
+First, recall the general form of an algebra in $\mathbb{V} (\mathbf A)$.  If $\mathbf{B} \in \mathbb{V}(\mathbf{A}) = \mathbf H \mathbf S \mathbf P (\mathbf A)$, then there exists $n< \omega$, $\mathbf{C}$, and $\theta \in \operatorname{Con}(\mathbf{C})$ such that $\mathbf{C} \leq \mathbf{A}^n$ and $\mathbf{B} \cong \mathbf C/\theta$.
 
 
 In our example, the only nontrivial proper subalgebra of $\mathbf{A}$ is the 3-element squag, which we denote by $\mathbf S$.
 
 Let $\pi_i : C \to A$ denote the projection of $C$ onto its $i$-th coordinate, with kernel $\eta_i = \ker \pi_i$. Let's assume for now that
 
-$\pi_i C = A$, for $1\leqslant i \leqslant m$, and
+$\pi_i C = A$, for $1\leq i \leq m$, and
 
-$\pi_i C = S$, for $m < i \leqslant n$.
+$\pi_i C = S$, for $m < i \leq n$.
 
-Let $\eta_A = \bigcap_{1\leqslant i \leqslant m} \eta_i$ and $\eta_S = \bigcap_{m< i \leqslant n} \eta_i$.
+Let $\eta_A = \bigcap_{1\leq i \leq m} \eta_i$ and $\eta_S = \bigcap_{m< i \leq n} \eta_i$.
 
-Then $\mathbf C \leqslant_{sd}  \mathbf A \times \cdots\times  \mathbf A \times \mathbf S \times \cdots \times \mathbf S$, a project with $m$ factors of $\mathbf A$, and $m-n$ factors of $\mathbf S$.
+Then $\mathbf C \leq_{sd}  \mathbf A \times \cdots\times  \mathbf A \times \mathbf S \times \cdots \times \mathbf S$, a project with $m$ factors of $\mathbf A$, and $m-n$ factors of $\mathbf S$.
 
-(Why don't we simply write $\mathbf C \leqslant_{sd} \mathbf A^m \times \mathbf S^{n-m}$?  Because that would be a bit misleading, since $\mathbf C$ does not necessary project onto either of these two factors.)
+(Why don't we simply write $\mathbf C \leq_{sd} \mathbf A^m \times \mathbf S^{n-m}$?  Because that would be a bit misleading, since $\mathbf C$ does not necessary project onto either of these two factors.)
 
 Let $P:= \operatorname{Proj}_{m+1,\dots, n} C$ be the (simultaneous) projection of $C$ onto the $(m+1, \dots, n)$-factors of the product. (As indicated above, $P$ may be a proper subset of $S^{n-m}$.)
 Let $\mathbf P$ be the algebra in $\mathbb{V}(\mathbf A)$ with universe $P$.  Then
 
-$$\mathbf C \leqslant_{sd} \mathbf A\times \cdots \times \mathbf A \times \mathbf P.$$
+$$\mathbf C \leq_{sd} \mathbf A\times \cdots \times \mathbf A \times \mathbf P.$$
 
 Now, $\mathbf A$ is nonabelian. If we can show that $\mathbf A$ is also absorption-free, then it would follow by the Rectangularity Theorem that $\mathbf C = \mathbf A^m \times \mathbf P$.
 
@@ -69,16 +69,16 @@ Now, $\mathbf A$ is nonabelian. If we can show that $\mathbf A$ is also absorpti
 
 #### Subdirectly Irreducibles: results from the commutator book
 
-Let $\mathbf{B} \cong \mathbf C/\theta$ for some $\mathbf{C} \leqslant \mathbf{A}^n$. Suppose $\mathbf{B}$ is SI and let $\mu$ be its unique minimal nontrivial congruence (*monolith*).  Then there exists a corresponding congruence $\psi \in \operatorname{Con}(\mathbf C)$ that is a join irreducible covering of $\theta$, and satisfies $\mathbf B / \mu \cong \mathbf C/ \psi$.
+Let $\mathbf{B} \cong \mathbf C/\theta$ for some $\mathbf{C} \leq \mathbf{A}^n$. Suppose $\mathbf{B}$ is SI and let $\mu$ be its unique minimal nontrivial congruence (*monolith*).  Then there exists a corresponding congruence $\psi \in \operatorname{Con}(\mathbf C)$ that is a join irreducible covering of $\theta$, and satisfies $\mathbf B / \mu \cong \mathbf C/ \psi$.
 
 Let $\alpha = (0 : \mu)$ be the centralizer of $\mu$ in $\operatorname{Con}(\mathbf B)$.  That is, $\alpha$ is the largest congruence $\gamma \in \operatorname{Con}(\mathbf B)$ such that $[\mu, \gamma] = 0$.
 
-By [Theorem 10.1, F-M], if  $\varphi = (\theta : \psi) \in \operatorname{Con}(\mathbf C)$ is the centralizer of $\psi$ over $\theta$---that is, $[\psi, \varphi] \leqslant \theta$ and $\varphi$ is the largest such congruence---then $\mathbf B / \alpha \cong \mathbf C/\varphi$, and $\mathbf B / \alpha \in \mathbf H \mathbf S (\mathbf A)$.
+By [Theorem 10.1, F-M], if  $\varphi = (\theta : \psi) \in \operatorname{Con}(\mathbf C)$ is the centralizer of $\psi$ over $\theta$---that is, $[\psi, \varphi] \leq \theta$ and $\varphi$ is the largest such congruence---then $\mathbf B / \alpha \cong \mathbf C/\varphi$, and $\mathbf B / \alpha \in \mathbf H \mathbf S (\mathbf A)$.
 
 Note that, in our example, $\mathbf H \mathbf S (\mathbf A)$ is merely $\{\mathbf A, \mathbf S, \{*\}\}$. (Here $\{*\}$ is any of the 1-element subalgebras of $\mathbf A$.)
 
 So, we have two possibilities: Either
-1. $\alpha \geqslant \mu$, in which case $[\mu, \mu] = 0$ and $\mathbf B$ is abelian, or
+1. $\alpha \geq \mu$, in which case $[\mu, \mu] = 0$ and $\mathbf B$ is abelian, or
 2. $\alpha = 0$, in which case $\mathbf B \in \{\mathbf A, \mathbf S, \{*\}\}$.
 
 Since we are interested in finding SI's other than the trivial ones (in case 2), we will focus on case 1.  So assume $\mathbf B$ is a finite abelian SI in $\mathbb V(\mathbf A)$.
