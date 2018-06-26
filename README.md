@@ -92,10 +92,10 @@ By [Theorem 10.1, F-M], if  $\varphi = (\theta : \psi) \in \operatorname{Con}(\m
 Note that, in our example, $\mathbf H \mathbf S (\mathbf A)$ is merely $\\{\mathbf A, \mathbf S, \\{\ast \\}\\}$. (Here $\\{ \ast \\}$ is any of the 1-element subalgebras of $\mathbf A$.)
 
 So, we have two possibilities: Either
-1. $\alpha \geq \mu$, in which case $[\mu, \mu] = 0$ and $\mathbf B$ is abelian, or
+1. $\alpha \geq \mu$, in which case $[\mu, \mu] = 0$ (i.e., $\mu$ is abelian), or
 2. $\alpha = 0$, in which case $\mathbf B \in \\{\mathbf A, \mathbf S, \\{\ast \\}\\}$.
 
-Since we are interested in finding SI's other than the trivial ones appearing in case 2, we focus on case 1, and will assume from now on that $\mathbf B$ is a finite abelian SI in $\mathbb V(\mathbf A)$.
+Since we are interested in finding SI's other than the trivial ones appearing in case 2, we focus on case 1, and will assume from now on that $\mathbf B$ is a finite SI in $\mathbb V(\mathbf A)$ with abelian monolith $\mu$.
 
 
 ---
