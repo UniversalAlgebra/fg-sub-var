@@ -75,11 +75,11 @@ Let $\alpha = (0 : \mu)$ be the centralizer of $\mu$ in $\operatorname{Con}(\mat
 
 By [Theorem 10.1, F-M], if  $\varphi = (\theta : \psi) \in \operatorname{Con}(\mathbf C)$ is the centralizer of $\psi$ over $\theta$---that is, $[\psi, \varphi] \leq \theta$ and $\varphi$ is the largest such congruence---then $\mathbf B / \alpha \cong \mathbf C/\varphi$, and $\mathbf B / \alpha \in \mathbf H \mathbf S (\mathbf A)$.
 
-Note that, in our example, $\mathbf H \mathbf S (\mathbf A)$ is merely $\{\mathbf A, \mathbf S, \{\ast \}\}$. (Here $\{ \ast \}$ is any of the 1-element subalgebras of $\mathbf A$.)
+Note that, in our example, $\mathbf H \mathbf S (\mathbf A)$ is merely $\\{\mathbf A, \mathbf S, \\{\ast \\}\\}$. (Here $\\{ \ast \\}$ is any of the 1-element subalgebras of $\mathbf A$.)
 
 So, we have two possibilities: Either
 1. $\alpha \geq \mu$, in which case $[\mu, \mu] = 0$ and $\mathbf B$ is abelian, or
-2. $\alpha = 0$, in which case $\mathbf B \in \{\mathbf A, \mathbf S, \{\ast \}\}$.
+2. $\alpha = 0$, in which case $\mathbf B \in \\{\mathbf A, \mathbf S, \\{\ast \\}\\}$.
 
 Since we are interested in finding SI's other than the trivial ones appearing in case 2, we focus on case 1, and will assume from now on that $\mathbf B$ is a finite abelian SI in $\mathbb V(\mathbf A)$.
 
